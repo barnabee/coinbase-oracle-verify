@@ -1,9 +1,9 @@
 {
-  "name": "node-scratch",
+  "name": "coinbase-oracle-verify",
   "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "dependencies": {
     "web3": "^1.7.1"
   }
