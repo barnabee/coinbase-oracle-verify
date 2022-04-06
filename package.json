@@ -1,0 +1,10 @@
+{
+  "name": "node-scratch",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "web3": "^1.7.1"
+  }
+}
