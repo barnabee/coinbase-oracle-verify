@@ -8,6 +8,11 @@ const crypto = require('crypto');
 
 
 const { API_KEY, API_SECRET, API_PASSPHRASE } = process.env;
+if (!API_KEY || !API_SECRET || !API_PASSPHRASE) {
+  console.log('error: missing one or more of API_KEY, API_SECRET, API_PASSPHRASE environment variables');
+  process.exit(1)
+}
+
 const API_URL = 'https://api.exchange.coinbase.com'
 
 async function main() {
