@@ -14,10 +14,10 @@ async function decodeAndVerify(data) {
 	for (let i=0; i<messages.length; ++i) {
 
 		// Decode the data — this works just fine and we get extremely reasonable looking data
-		record = Object.values(web3.eth.abi.decodeParameters(['string', 'uint', 'string', 'uint'], messages[i])).slice(0, -1);
+		const record = Object.values(web3.eth.abi.decodeParameters(['string', 'uint', 'string', 'uint'], messages[i])).slice(0, -1);
 
 		// Attempt to recover the signer, if this is 0xfCEAdAFab14d46e20144F48824d0C09B1a03F2BC we think it's "good"
-		adr = web3.eth.accounts.recover(web3.utils.keccak256(messages[i]), signatures[i], false); 
+		const adr = web3.eth.accounts.recover(web3.utils.keccak256(messages[i]), signatures[i], false); 
 		
 		// Print what we found...
 		console.log(record, adr === '0xfCEAdAFab14d46e20144F48824d0C09B1a03F2BC' ? 'signature OK' : 'BAD signature!');
